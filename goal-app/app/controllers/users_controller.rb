@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       login!(@user)
       redirect_to user_url(@user)
     else
+      flash[:errors] = ["Username or password invalid"]
       render :new
     end
   end

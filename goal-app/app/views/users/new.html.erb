@@ -1,0 +1,26 @@
+<h3>Sign up page</h3>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="<%= users_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="username">Username: </label>
+  <input type="text" id="username" name="user[username]">
+
+  <br>
+
+  <label for="password">Password: </label>
+  <input type="password" id="password" name="user[password]">
+
+  <br>
+
+  <input type="submit" value="Sign up babycakes">
+
+
+
+
+</form>
